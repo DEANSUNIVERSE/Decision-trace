@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝕯𝖊𝖆𝖓'𝖘 𝖀𝖓𝖎𝖛𝖊𝖗𝖘𝖊 🍃 | Systems Reasoning & Decision Traceability</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Tailwind & Icons -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      colors: {
+        canvas: '#06070a',
+        surface: '#0d0f16',
+        obsidian: '#12151f',
+        charcoal: '#8f96a6',
+        subtle: '#656b79',
+        border: 'rgba(255, 255, 255, 0.08)',
+        accent: '#fc3b56',
+        gold: '#d6ad63',
+      }
+    }
+  }
+}
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: #06070a;
+  color: #f4f5f7;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.technical-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+.premium-card {
+  background: rgba(13, 15, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.premium-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(214, 173, 99, 0.3);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.8), 0 0 20px rgba(214, 173, 99, 0.1);
+}
+.pricing-transition {
+  transition: all 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+</style>
+</head>
+
+<body class="w-full relative bg-canvas">
+  <div class="fixed inset-0 z-0 technical-grid pointer-events-none"></div>
+  <div id="canvas-container" class="fixed inset-0 z-0 opacity-80 pointer-events-none"></div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 w-full px-6 py-4 md:px-12 flex justify-between items-center bg-[#06070a]/80 backdrop-blur-xl border-b border-white/10">
+    <div class="flex items-center gap-3">
+      <div class="w-2.5 h-2.5 bg-[#fc3b56] rounded-full shadow-[0_0_10px_#fc3b56]"></div>
+      <span class="font-mono text-xs font-bold tracking-widest text-white uppercase">
+        𝕯𝖊𝖆𝖓'𝖘 𝖀𝖓𝖎𝖛𝖊𝖗𝖘𝖊 <span class="text-[#d6ad63]">🍃</span>
+      </span>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] font-bold tracking-wider text-neutral-400">
+      <a href="#logic-graph" class="hover:text-white transition-colors">LOGIC_GRAPH</a>
+      <a href="#lifecycle" class="hover:text-white transition-colors">LIFECYCLE</a>
+      <a href="#audit" class="hover:text-white transition-colors">IMMUTABLE_AUDIT</a>
+      <a href="#pricing" class="hover:text-white transition-colors">BANDWIDTH</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <span class="hidden sm:inline-block font-mono text-[10px] text-emerald-400 tracking-wider">● SYSTEM v2.4 OPERATIONAL</span>
+      <a href="#pricing" class="font-mono text-xs font-bold px-4 py-2 rounded border border-[#d6ad63]/40 bg-[#d6ad63]/10 hover:bg-[#d6ad63] hover:text-black transition-all">
+        INITIALIZE
+      </a>
+    </div>
+  </header>
+
+  <!-- Content Wrapper -->
+  <div class="z-10 flex flex-col w-full relative pt-24">
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[85vh] flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 gap-12" id="logic-graph">
+      <div class="max-w-2xl space-y-8 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="font-mono text-[10px] font-semibold text-neutral-300 tracking-wider uppercase">
+            Dean's Autonomous Reasoning Engine
+          </span>
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[0.95]">
+          Decision <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#d6ad63] via-[#fc3b56] to-white">
+            Traceability.
+          </span>
+        </h1>
+        <p class="max-w-lg text-sm md:text-base text-neutral-400 leading-relaxed font-normal">
+          The verifiable reasoning layer for complex distributed systems. Capture assumptions, map execution logic, and ensure every architectural pivot is 100% defensible.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">
+          <a href="#pricing" class="bg-[#fc3b56] hover:bg-[#e02e47] text-white px-7 py-3.5 rounded font-bold uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(252,59,86,0.3)]">
+            Explore Matrix →
+          </a>
+          <a href="#lifecycle" class="px-7 py-3.5 bg-white/5 hover:bg-white/10 text-neutral-200 border border-white/10 rounded font-bold uppercase tracking-wider transition-all">
+            Inspect Lineage
+          </a>
+        </div>
+      </div>
+
+      <!-- Logic Node Graph Visual -->
+      <div class="relative w-full max-w-lg aspect-square lg:aspect-[4/3] flex items-center justify-center">
+        <div class="premium-card w-full h-full p-6 relative overflow-hidden rounded-xl border border-white/10">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#fc3b56] to-[#d6ad63]"></div>
+          <div class="h-full w-full flex flex-col">
+            <div class="flex justify-between items-center mb-6 border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2">
+                <div class="w-2.5 h-2.5 rounded-full bg-[#d6ad63]"></div>
+                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-400">
+                  REAL-TIME PIPELINE LOGIC
+                </span>
+              </div>
+              <span class="font-mono text-[10px] text-emerald-400">STATE: VERIFIED</span>
+            </div>
+
+            <div class="flex-1 relative">
+              <svg class="w-full h-full" viewBox="0 0 400 300">
+                <style>
+                  .signal-path {
+                    stroke-dasharray: 60 400;
+                    stroke-dashoffset: 60;
+                    animation: signal-flow 5s linear infinite;
+                  }
+                  @keyframes signal-flow {
+                    0% { stroke-dashoffset: 60; opacity: 0; }
+                    5% { opacity: 1; }
+                    90% { stroke-dashoffset: -360; opacity: 1; }
+                    100% { stroke-dashoffset: -360; opacity: 0; }
+                  }
+                </style>
+
+                <path d="M50,150 C100,150 100,80 150,80" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+                <path d="M50,150 C100,150 100,220 150,220" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+                <path d="M150,80 C200,80 200,120 250,120" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+                <path d="M150,220 C200,220 200,180 250,180" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+                <path d="M250,120 L320,150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+                <path d="M250,180 L320,150" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"></path>
+
+                <!-- Signal Active Stream -->
+                <path d="M50,150 C100,150 100,80 150,80 C200,80 200,120 250,120 L320,150" fill="none" stroke="#fc3b56" stroke-width="3" stroke-linecap="round" class="signal-path"></path>
+
+                <!-- Nodes -->
+                <circle cx="50" cy="150" r="7" fill="#d6ad63"></circle>
+                <text x="50" y="176" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#fff">CONTEXT</text>
+
+                <rect x="150" y="70" width="80" height="22" rx="4" fill="#12151f" stroke="#fc3b56" stroke-width="1.5"></rect>
+                <text x="190" y="85" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#fff">HYPOTHESIS</text>
+
+                <rect x="150" y="210" width="80" height="22" rx="4" fill="#12151f" stroke="rgba(255,255,255,0.15)"></rect>
+                <text x="190" y="225" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#8f96a6">ANALYTICS</text>
+
+                <rect x="250" y="110" width="70" height="22" rx="4" fill="#12151f" stroke="#d6ad63" stroke-width="1.5"></rect>
+                <text x="285" y="125" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#fff">EVIDENCE</text>
+
+                <circle cx="320" cy="150" r="13" fill="#fc3b56"></circle>
+                <path d="M316 150l3 3 5-5" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"></path>
+                <text x="320" y="180" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" font-weight="700" fill="#fff">VERDICT</text>
+              </svg>
+
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/90 border border-white/10 px-3 py-1.5 rounded font-mono text-[10px] text-[#d6ad63] shadow-xl">
+                FIDELITY CONFIDENCE: 99.4%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCROLLING LIFECYCLE TIMELINE -->
+    <section id="lifecycle" class="relative w-full border-t border-b border-white/10 bg-[#090b10] py-24 px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <span class="text-[#fc3b56] font-mono text-xs font-bold tracking-widest uppercase block mb-3">// SEQUENCE VERIFICATION</span>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">Architectural Lifecycle</h2>
+        <p class="text-neutral-400 text-sm max-w-md mx-auto">From initial telemetry triggers to permanent cryptographic record.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6 font-mono">
+        <div class="p-6 rounded-lg bg-white/[0.02] border border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <span class="text-[#fc3b56] font-bold text-sm">01</span>
+            <div>
+              <div class="text-white text-sm font-bold">Trigger Evaluation</div>
+              <div class="text-xs text-neutral-400">High-concurrency workload requires immediate infrastructure scaling.</div>
+            </div>
+          </div>
+          <span class="text-[10px] bg-red-950/60 border border-red-800 text-red-300 px-3 py-1 rounded">CAPTURED</span>
+        </div>
+
+        <div class="p-6 rounded-lg bg-white/[0.02] border border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <span class="text-[#d6ad63] font-bold text-sm">02</span>
+            <div>
+              <div class="text-white text-sm font-bold">Core Hypothesis Validated</div>
+              <div class="text-xs text-neutral-400">Microsecond pipeline reduces edge compute latency below 40ms SLA.</div>
+            </div>
+          </div>
+          <span class="text-[10px] bg-amber-950/60 border border-amber-800 text-amber-300 px-3 py-1 rounded">MATCHED</span>
+        </div>
+
+        <div class="p-6 rounded-lg bg-white/[0.02] border border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <span class="text-emerald-400 font-bold text-sm">03</span>
+            <div>
+              <div class="text-white text-sm font-bold">Consensus Reached & Deployed</div>
+              <div class="text-xs text-neutral-400">SHA-256 state seal locked into continuous deployment pipelines.</div>
+            </div>
+          </div>
+          <span class="text-[10px] bg-emerald-950/60 border border-emerald-800 text-emerald-300 px-3 py-1 rounded">SEALED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDWIDTH / PRICING SECTION -->
+    <section class="py-28 px-6 md:px-12 lg:px-20 border-b border-white/10" id="pricing">
+      <div class="max-w-5xl mx-auto text-center mb-16">
+        <span class="text-[#d6ad63] font-mono text-xs font-bold tracking-widest uppercase block mb-3">// ALLOCATION</span>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">Compute Bandwidth</h2>
+        <p class="text-neutral-400 text-sm">Select architectural capacity calibrated for modern scale.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Hobby / Solo -->
+        <div id="pricing-hobby" class="p-8 rounded-xl bg-white/[0.02] border border-white/10 flex flex-col justify-between hover:border-[#fc3b56] transition-all">
+          <div>
+            <div class="font-mono text-xs font-bold text-[#d6ad63] mb-3">NODE 01 // INDEPENDENT</div>
+            <div class="text-3xl font-bold text-white mb-4">$49<span class="text-xs text-neutral-500 font-mono">/mo</span></div>
+            <p class="text-xs text-neutral-400 leading-relaxed mb-6 font-mono">For solo developers and researchers auditing algorithmic pipelines.</p>
+            <ul class="text-xs text-neutral-300 space-y-3 font-mono border-t border-white/10 pt-6">
+              <li>✓ Single Decision Graph</li>
+              <li>✓ 10 Active Stream Monitors</li>
+              <li>✓ Real-Time Telemetry Exports</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded bg-white/5 hover:bg-white/15 border border-white/10 text-xs font-mono font-bold tracking-wider text-white transition-all">
+            Deploy Node
+          </button>
+        </div>
+
+        <!-- Pro / Active -->
+        <div id="pricing-pro" class="p-8 rounded-xl bg-[#12151f] border-2 border-[#fc3b56] flex flex-col justify-between shadow-[0_0_35px_rgba(252,59,86,0.15)] scale-[1.02]">
+          <div>
+            <div class="font-mono text-xs font-bold text-[#fc3b56] mb-3">NODE 02 // ARCHITECT (PRO)</div>
+            <div class="text-3xl font-bold text-white mb-4">$189<span class="text-xs text-neutral-500 font-mono">/mo</span></div>
+            <p class="text-xs text-neutral-400 leading-relaxed mb-6 font-mono">For scaling engineering squads running automated compliance loops.</p>
+            <ul class="text-xs text-neutral-200 space-y-3 font-mono border-t border-white/10 pt-6">
+              <li>✓ Unlimited Graph Lineages</li>
+              <li>✓ Automated Consensus Audits</li>
+              <li>✓ High-Velocity SHA Seals</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded bg-[#fc3b56] hover:bg-[#e02e47] text-white text-xs font-mono font-bold tracking-wider transition-all shadow-[0_0_15px_rgba(252,59,86,0.4)]">
+            Activate Pro Stack
+          </button>
+        </div>
+
+        <!-- Enterprise -->
+        <div id="pricing-ent" class="p-8 rounded-xl bg-white/[0.02] border border-white/10 flex flex-col justify-between hover:border-[#d6ad63] transition-all">
+          <div>
+            <div class="font-mono text-xs font-bold text-emerald-400 mb-3">NODE 03 // ENTERPRISE</div>
+            <div class="text-3xl font-bold text-white mb-4">Custom</div>
+            <p class="text-xs text-neutral-400 leading-relaxed mb-6 font-mono">Dedicated cluster architecture and verifiable air-gapped security protocols.</p>
+            <ul class="text-xs text-neutral-300 space-y-3 font-mono border-t border-white/10 pt-6">
+              <li>✓ Custom On-Premise Mesh</li>
+              <li>✓ Sub-millisecond SLA</li>
+              <li>✓ Direct Architectural Channel</li>
+            </ul>
+          </div>
+          <button class="mt-8 w-full py-2.5 rounded bg-white/5 hover:bg-white/15 border border-white/10 text-xs font-mono font-bold tracking-wider text-white transition-all">
+            Direct Dispatch
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 md:px-12 lg:px-20 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-neutral-500 gap-4">
+      <div>𝕯𝖊𝖆𝖓'𝖘 𝖀𝖓𝖎𝖛𝖊𝖗𝖘𝖊 🍃 // SYSTEMS ARCHITECTURE &copy; 2026</div>
+      <div class="flex items-center gap-3">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span>ENGINE CLUSTER: ACTIVE 60FPS</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Background Three.js Particle Lattice -->
+  <script>
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 22);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    const geometry = new THREE.BoxGeometry(10, 10, 10, 24, 24, 24);
+    const material = new THREE.PointsMaterial({
+      color: 0xd6ad63,
+      size: 0.08,
+      transparent: true,
+      opacity: 0.4
+    });
+
+    const cubePoints = new THREE.Points(geometry, material);
+    scene.add(cubePoints);
+
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      cubePoints.rotation.y += 0.002;
+      cubePoints.rotation.x += 0.001;
+      camera.position.x += (mouseX * 2 - camera.position.x) * 0.05;
+      camera.position.y += (mouseY * 2 - camera.position.y) * 0.05;
+      camera.lookAt(0, 0, 0);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
